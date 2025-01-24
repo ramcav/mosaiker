@@ -2,7 +2,6 @@ from mosaiker import mosaiker, parallel_mosaiker
 from tiles import load_and_preprocess
 import cv2
 import os
-import random
 import re
 
 def main():
@@ -10,7 +9,7 @@ def main():
     
     tile_list = load_and_preprocess()
     
-    block_size = 8
+    block_size = 32
     cpu_count = os.cpu_count()
     
     mosaic_image = parallel_mosaiker(path, block_size, tile_list, cpu_count)
